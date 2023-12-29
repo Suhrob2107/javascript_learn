@@ -1,0 +1,29 @@
+<html>
+<head>
+    <script>
+        var i=0;var a=new Array();
+        function coords(event){
+            document.frm.x.value=event.clientX;
+            document.frm.y.value=event.clientY;
+            var x = event.clientX;
+            var y = event.clientY;
+            a[i]=x;
+		    a[i+1]=y;
+		    i+=2;
+		    }
+		    function liste()
+		    {
+		    for(j=0;j<i;j+=2)
+		    document.write("<img src='banner.jpeg' width=100 height=100 style='position:absolute;top:"+a[j+1]+";left:"+a[j]+";'>");
+		    }
+        
+    </script>
+<body onclick="coords(event)">
+    <form name="frm">
+        <input type="text" name="x">
+        <input type="text" name="y">
+        <input type="button" value="button" name="button" onclick="liste()" >
+    </form>
+</body>
+</head>
+</html>
